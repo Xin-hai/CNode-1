@@ -1,19 +1,19 @@
 <template>
   <div id="app">
       <Header />
-      <Listing />
+    <router-view name="main"></router-view>
+
   </div>
 </template>
 
 <script>
 import Header from '@/views/Header.vue'
-import Listing from "@/views/Listing.vue";
+
 
 export default {
   name: 'APP',
   components:{
     Header,
-    Listing
   }
 }
 </script>
