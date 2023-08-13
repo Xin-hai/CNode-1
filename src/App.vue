@@ -1,32 +1,37 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+      <Header />
+      <Listing />
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import Header from '@/views/Header.vue'
+import Listing from "@/views/Listing.vue";
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+export default {
+  name: 'APP',
+  components:{
+    Header,
+    Listing
   }
 }
+</script>
+
+<style lang="scss">
+@import '~@/assets/style/helper.scss';
+@import '~@/assets/style/reset.scss';
+#app {
+  font-family: "Helvetica Neue","Luxi Sans","DejaVu Sans",$font-fangSong,$font-song,$font-kai;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+}
+body {
+  word-break: break-word;
+  line-height: 20px;
+  color: #333;
+  background: #e1e1e1;
+}
+
 </style>
