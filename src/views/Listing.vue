@@ -43,43 +43,10 @@ export default {
       isLoading: false,
       posts: [],
       topBar: [
-        {
-          name: '全部'
-        },
-        {
-          name: '精华'
-        },
-        {
-          name: '分享'
-        },
-        {
-          name: '问答'
-        },
-        {
-        name: '招聘'
-        },
-        {
-          name: '客户端测试'
-        }
+        {name: '全部'}, {name: '精华'}, {name: '分享'},
+        {name: '问答'}, {name: '招聘'}, {name: '客户端测试'}
       ],
       selected: []
-    }
-  },
-  filters: {
-    tabFormat(post){
-      if(post.good === true){
-        return '精华'
-      }else if(post.top === true){
-        return '置顶'
-      }else if(post.tab === 'ask'){
-        return '问答'
-      }else if(post.tab === 'share'){
-        return '分享'
-      }else if(post.tab === 'job'){
-        return '招聘'
-      }else {
-        return '分享'
-      }
     }
   },
   methods: {
@@ -90,7 +57,6 @@ export default {
       }).then(res => {
         this.isLoading = false
         this.posts = res.data.data
-        console.log(res)
       }).catch((err) => console.log(err))
     },
     selectedBar(index,item){
@@ -112,5 +78,4 @@ export default {
 
 <style scoped lang="scss">
 @import "@/assets/style/listing";
-
 </style>

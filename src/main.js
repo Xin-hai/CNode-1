@@ -35,3 +35,19 @@ Vue.filter('formatData', (string) => {
         return parseInt((time / (12 * 30 * 24 * 60 * 60 * 1000)).toString()) + '年前'
     }
 })
+
+Vue.filter('tabFormat',(post) =>{
+    if(post.good === true){
+        return '精华'
+    }else if(post.top === true){
+        return '置顶'
+    }else if(post.tab === 'ask'){
+        return '问答'
+    }else if(post.tab === 'share'){
+        return '分享'
+    }else if(post.tab === 'job'){
+        return '招聘'
+    }else {
+        return '分享'
+    }
+})
