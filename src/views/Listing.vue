@@ -24,7 +24,16 @@
               :class="[{good: (post.good === true),top:(post.top === true),'normal':(post.good !==true && post.top !== true)}]">
             <span>{{post | tabFormat}}</span>
           </span>
-          <span>{{ post.title }}</span>
+          <router-link :to="{
+            name:'post_content',
+            params: {
+              id: post.id
+            }
+           }">
+            <span>
+            {{ post.title }}
+          </span>
+          </router-link>
           <span class="last-reply">
             {{ post.last_reply_at | formatData }}
           </span>
@@ -77,5 +86,5 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import "@/assets/style/listing";
+@import "~@/assets/style/listing";
 </style>
