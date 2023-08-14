@@ -1,7 +1,7 @@
 <template>
   <div class="listing">
     <div class="loading" v-if="isLoading">
-      <img src="@/assets/loading.gif" alt="">
+      <img src="@/assets/loading.gif" alt="这是加载中">
     </div>
 
     <div class="posts" v-else>
