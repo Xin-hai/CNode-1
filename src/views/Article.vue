@@ -3,23 +3,40 @@
     <div class="loading" v-if="isLoading">
       <img src="@/assets/loading.gif" alt="">
     </div>
-  <div v-else >
-      <div class="header">
-          <div class="title">{{post.title}}</div>
-        <ul>
-          <li>●发布于：{{post.create_at | formatData}}</li>
-          <li>●作者
-            {{post.author.loginname}}
-          </li>
-          <li>
-            {{post.visit_count}} 次浏览
-          </li>
-          <li>
-            来自{{post | tabFormat}}
-          </li>
+  <div v-else class="article-content">
+      <div class="topic-header">
+          <div class="topic-title">{{post.title}}</div>
+        <ul class="topic-changes">
+          <li>  •发布于{{ "\xa0" }}{{ post.create_at | formatData }}{{ "\xa0" }}</li>
+          <li>   作者 {{ post.author.loginname }}{{ "\xa0" }}</li>
+          <li>•{{ post.visit_count }} 次浏览{{ "\xa0" }}</li>
+          <li>•来自{{ post | tabFormat }}{{ "\xa0" }}</li>
         </ul>
-        <div v-html="post.content" class="content"></div>
+        <div v-html="post.content" class="topic-content"></div>
       </div>
+      <div class="topic-replies">
+        <div class="topic-topBar"> {{post.reply_count}} 回复</div>
+        <div v-for="(reply, index) in post.replies" :key="index" class="reply-content">
+          <router-link :to="{
+            name: 'userinfo',
+            params: {
+              name:reply.author.loginname
+            }
+          }">
+            <img :src="reply.author.avatar_url" alt="" class="author-img">
+          </router-link>
+
+            <span class="first-span">{{reply.author.loginname}}</span>
+            <span>{{index+1}}楼•</span>
+            <span>{{reply.create_at | formatData}}</span>
+            <span class="reply-zan">
+              <img src="@/assets/style/赞.svg" alt="" class="topic-zan">
+              <span>{{reply.ups.length}}</span>
+            </span>
+          <p v-html="reply.content" class="clearfix"></p>
+        </div>
+      </div>
+
   </div>
 
 </div>
@@ -49,11 +66,122 @@ export default {
   beforeMount() {
     this.isLoading = true
     this.getArticleData()
-  }
+  },
+
 }
+
 </script>
 
-<style  lang="scss">
+<style  lang="scss" scoped>
 @import '~@/assets/style/markdown.css';
+.article{
+  margin: 0 auto;
+  max-width: 80%;
+}
+.article:not(:first-child) {
+  //margin-right: 340px;
+  margin-top: 15px;
+}
+.article-content{
+  background: #fff;
+}
+
+.topic-header {
+  padding: 10px;
+  border-radius: 3px 3px 0 0;
+  background: #fff;
+  .topic-title {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 8px 0;
+    vertical-align: bottom;
+    width: 75%;
+    line-height: 130%;
+  }
+  .topic-changes {
+    font-size: 12px;
+    color: #838383;
+    overflow: hidden;
+    word-break: break-word;
+    margin: 6px 0;
+    padding-bottom: 8px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #e5e5e5;
+    li {
+      font-family: "Helvetica Neue","Luxi Sans","DejaVu Sans",Tahoma,"Hiragino Sans GB",STHeiti,sans-serif!important;
+      margin-right: 2px;
+    }
+  }
+  .topic-content{
+
+    padding: 5px 8px;
+  }
+}
+
+.topic-replies{
+  margin-top: 15px;
+
+  .topic-topBar{
+    padding: 10px;
+    font-size: 14px;
+    margin-top: 10px;
+    background: #f6f6f6;
+    border-radius: 3px 3px 0 0;
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+    justify-content: flex-start;
+  }
+  .reply-content{
+
+    .author-img{
+      width: 30px;
+      height: 30px;
+      position: relative;
+      bottom: -9px;
+      margin: 0 10px;
+    }
+    a, span{
+      font-size: 13px;
+      color: #666;
+      text-decoration: none;
+    }
+    .first-span{
+     margin-right: 5px;
+    }
+    p{
+      padding-left: 55px;
+      margin: 0 0 15px;
+      font-size: 15px;
+    }
+  }
+}
+
+.topic-zan{
+  width: 20px;
+  height: 20px;
+}
+.markdown-text img {
+  width: 92% !important;
+  cursor: pointer;
+}
+.reply-zan{
+  float: right;
+  vertical-align: middle;
+  text-align: center;
+  margin-right: 10px;
+  margin-top: 20px;
+  span {
+    margin-left: 5px;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 20px;
+  }
+  img {
+    display: inline-block;
+    vertical-align: middle
+  }
+}
 
 </style>
