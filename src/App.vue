@@ -33,5 +33,17 @@ body {
   color: #333;
   background: #e1e1e1;
 }
+.loading {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #e1e1e1;
+  height: calc(100vh - 50px);
+  img {
+    width: 240px;
+    height: 240px;
+  }
+}
 
 </style>
