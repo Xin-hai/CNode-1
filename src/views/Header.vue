@@ -3,9 +3,15 @@
     <div class="container">
       <img src="@/assets/nodejs.svg" alt="网络错误，这是cnode.js的图片" title="conde.js">
       <ul>
-        <li><a href="#">首页</a></li>
-        <li><a href="#">新手入门</a></li>
-        <li><a href="#">API</a></li>
+        <li>
+          <router-link to="/">首页</router-link>
+        </li>
+        <li>
+         <router-link to='/accidence'>新手入门</router-link>
+        </li>
+        <li>
+          <router-link to='/api'>新手入门</router-link>
+        </li>
         <li><a href="#">关于</a></li>
         <li><a href="#">注册</a></li>
         <li><a href="#">登录</a></li>

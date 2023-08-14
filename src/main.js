@@ -7,12 +7,6 @@ import Axios from 'axios'
 Vue.config.productionTip = false
 Vue.prototype.$http = Axios
 
-new Vue({
-    router,
-    store,
-    render: h => h(App)
-}).$mount('#app')
-
 Vue.filter('formatData', (string) => {
     if (!string) return ''
     let date = new Date(string)
@@ -51,3 +45,11 @@ Vue.filter('tabFormat',(post) =>{
         return '分享'
     }
 })
+
+
+new Vue({
+    router,
+    store,
+    render: h => h(App)
+}).$mount('#app')
+
