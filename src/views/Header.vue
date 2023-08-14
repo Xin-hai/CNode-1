@@ -10,9 +10,11 @@
          <router-link to='/accidence'>新手入门</router-link>
         </li>
         <li>
-          <router-link to='/api'>新手入门</router-link>
+          <router-link to='/api'>API</router-link>
         </li>
-        <li><a href="#">关于</a></li>
+        <li>
+          <router-link to='/cnode'>关于</router-link>
+        </li>
         <li><a href="#">注册</a></li>
         <li><a href="#">登录</a></li>
       </ul>

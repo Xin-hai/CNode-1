@@ -5,6 +5,7 @@ import Listing from "@/views/Listing.vue";
 import UserInfo from "@/views/UserInfo.vue";
 import Accidence from "@/components/Accidence.vue";
 import API from "@/components/API.vue";
+import CnodeAbout from "@/components/CnodeAbout.vue";
 
 Vue.use(VueRouter)
 
@@ -28,6 +29,13 @@ const routes = [
     path: '/api',
     components: {
       main: API
+    }
+  },
+  {
+    name: 'cnode',
+    path: '/cnode',
+    components: {
+      main: CnodeAbout
     }
   },
   {

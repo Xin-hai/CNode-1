@@ -1,11 +1,11 @@
 <template>
-  <div id="api">
+  <div id="about">
     <section class="goTopic">
       <router-link to="/">主页</router-link>
       <span class="slash">/ API</span>
     </section>
     <div class="content">
-      <h2>API请参考 <a href="https://cnodejs.org/api">cnode的API介绍</a></h2>
+      <h2>API请参考 <a href="https://cnodejs.org/api">CNode的API介绍</a></h2>
     </div>
   </div>
 
@@ -19,7 +19,7 @@ export default {
 
 <style scoped lang="scss">
 
-#api {
+#about {
   max-width: 80%;
   margin: 10px auto;
   .goTopic {
@@ -45,7 +45,7 @@ export default {
   .content {
     border-top: 1px solid #eee;
     background: #fff;
-    height: 67.5vh;
+    height: 70vh;
     display: flex;
     justify-content: center;
     padding: 200px;
@@ -58,5 +58,4 @@ export default {
     }
   }
 }
-
 </style>
