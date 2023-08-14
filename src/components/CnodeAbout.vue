@@ -1,5 +1,5 @@
 <template>
-  <div id="about">
+  <div id="login">
     <section class="goTopic">
       <router-link to="/">主页</router-link>
       <span class="slash">/ 关于</span>
@@ -26,7 +26,7 @@ export default {
 
 <style scoped lang="scss">
 
-#about {
+#login {
   max-width: 80%;
   margin: 10px auto;
   .goTopic {

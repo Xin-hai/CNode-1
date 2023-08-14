@@ -2,10 +2,10 @@
   <div id="login">
     <section class="goTopic">
       <router-link to="/">主页</router-link>
-      <span class="slash">/ API</span>
+      <span class="slash">/ 登录</span>
     </section>
     <div class="content">
-      <h2>API请参考 <a href="https://cnodejs.org/api">CNode的API介绍</a></h2>
+      <h2>登录请前往 <a href="https://cnodejs.org/signin">CNode社区登录页</a></h2>
     </div>
   </div>
 

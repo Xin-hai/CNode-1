@@ -6,6 +6,8 @@ import UserInfo from "@/views/UserInfo.vue";
 import Accidence from "@/components/Accidence.vue";
 import API from "@/components/API.vue";
 import CnodeAbout from "@/components/CnodeAbout.vue";
+import Register from "@/components/Register.vue";
+import Login from "@/components/Login.vue";
 
 Vue.use(VueRouter)
 
@@ -29,6 +31,20 @@ const routes = [
     path: '/api',
     components: {
       main: API
+    }
+  },
+  {
+    name: 'register',
+    path: '/register',
+    components: {
+      main: Register
+    }
+  },
+  {
+    name: 'login',
+    path: '/login',
+    components: {
+      main: Login
     }
   },
   {
