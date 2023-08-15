@@ -25,12 +25,13 @@ export default {
     changeBtn(page){
 
       if(typeof page !== 'number'){
+        let button = $('button.currentPage')
         switch (page.target.innerText){
           case '上一页':
-            $('button.currentPage').prev().click()
+            button.prev().click()
                 break
           case '下一页':
-            $('button.currentPage').next().click()
+            button.next().click()
                 break
           case '首页':
             this.pageBtn = [1,2,3,4]
