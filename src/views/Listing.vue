@@ -39,6 +39,9 @@
             {{ post.last_reply_at | formatData }}
           </span>
         </li>
+        <li>
+          <Pagination @handle="renderList" />
+        </li>
       </ul>
     </div>
 
@@ -46,12 +49,16 @@
 </template>
 
 <script>
+import Pagination from "@/components/Pagination.vue";
+
 export default {
   name: "Listing",
+  components: {Pagination},
   data() {
     return {
       isLoading: false,
       posts: [],
+      postPage: 1,
       topBar: [
         {name: '全部'}, {name: '精华'}, {name: '分享'},
         {name: '问答'}, {name: '招聘'}, {name: '客户端测试'}
@@ -62,8 +69,10 @@ export default {
   methods: {
     getData() {
       this.$http.get('https://cnodejs.org/api/v1/topics', {
-        page: 1,
-        limit: 10
+        params: {
+          page: this.postPage,
+          limit: 20
+        }
       }).then(res => {
         this.isLoading = false
         this.posts = res.data.data
@@ -74,6 +83,10 @@ export default {
         this.selected = [] // 将前一次选中的移除
         this.selected.push(item)
       }
+    },
+    renderList(value){
+      this.postPage = value
+      this.getData()
     }
   },
   created(){

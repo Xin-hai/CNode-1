@@ -1,7 +1,7 @@
 <template>
   <div id="header">
     <div class="container">
-      <img src="@/assets/nodejs.svg" alt="网络错误，这是cnode.js的图片" title="conde.js">
+      <img src="@/assets/nodejs.svg" alt="网络错误，这是cnode.js的图片" title="conde.js" @click="ToHomePage">
       <ul>
         <li>
           <router-link to="/">首页</router-link>
@@ -24,7 +24,12 @@
 
 <script>
 export default {
-  name: "Header"
+  name: "Header",
+  methods: {
+    ToHomePage(){
+      this.$router.push({name: 'root'})
+    }
+  }
 }
 </script>
 
@@ -44,6 +49,7 @@ export default {
     img {
       flex: auto;
       max-width: 120px;
+      cursor: pointer;
     }
     ul{
       display: flex;
