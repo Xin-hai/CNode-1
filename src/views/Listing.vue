@@ -15,7 +15,14 @@
         </li>
 
         <li v-for="post in posts" :key="post.id" class="cell">
-          <img :src="post.author.avatar_url" alt="">
+          <router-link :to="{
+            name: 'userinfo',
+            params: {
+              name: post.author.loginname
+            }
+          }">
+            <img :src="post.author.avatar_url" alt="">
+          </router-link>
           <span class="count">
             <span class="reply">{{ post.reply_count }}</span>
             /{{ post.visit_count }}
@@ -71,7 +78,7 @@ export default {
       this.$http.get('https://cnodejs.org/api/v1/topics', {
         params: {
           page: this.postPage,
-          limit: 20
+          limit: 30
         }
       }).then(res => {
         this.isLoading = false

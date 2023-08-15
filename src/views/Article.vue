@@ -73,6 +73,15 @@ export default {
 
 <style  lang="scss" scoped>
 @import '~@/assets/style/markdown-github.css';
+// 从数据库拿到的 图片 img 怎么都选不中
+.markdown-text {
+  img{
+    max-width: 1000px;
+  }
+}
+img{
+  max-width: 1000px;
+}
 
 
 .article{
