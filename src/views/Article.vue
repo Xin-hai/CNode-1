@@ -33,7 +33,7 @@
               <img src="@/assets/style/赞.svg" alt="" class="topic-zan">
               <span>{{reply.ups.length}}</span>
             </span>
-          <p v-html="reply.content" class="clearfix"></p>
+          <p v-html="reply.content" class="markdown-text"></p>
         </div>
       </div>
 
@@ -67,16 +67,18 @@ export default {
     this.isLoading = true
     this.getArticleData()
   },
-
 }
 
 </script>
 
 <style  lang="scss" scoped>
-@import '~@/assets/style/markdown.css';
+@import '~@/assets/style/markdown-github.css';
+
+
 .article{
-  margin: 0 auto;
-  max-width: 80%;
+  margin: 0 0 0 185px;
+  max-width: 64%;
+  min-height: 71.8vh;
 }
 .article:not(:first-child) {
   //margin-right: 340px;
@@ -134,7 +136,6 @@ export default {
     justify-content: flex-start;
   }
   .reply-content{
-
     .author-img{
       width: 30px;
       height: 30px;

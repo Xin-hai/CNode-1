@@ -8,6 +8,7 @@ import API from "@/components/API.vue";
 import CnodeAbout from "@/components/CnodeAbout.vue";
 import Register from "@/components/Register.vue";
 import Login from "@/components/Login.vue";
+import SideBar from "@/views/SideBar.vue";
 
 Vue.use(VueRouter)
 
@@ -56,9 +57,10 @@ const routes = [
   },
   {
     name: 'post_content',
-    path: '/topic/:id',
+    path: '/topic/:id&author=:name',
     components: {
-      main: Article
+      main: Article,
+      sideBar: SideBar
     }
   },
   {

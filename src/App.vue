@@ -1,7 +1,9 @@
 <template>
   <div id="app">
       <Header />
-    <router-view name="main" :key="$route.fullPath"></router-view>
+    <router-view name="sideBar"></router-view>
+      <router-view name="main" :key="$route.fullPath"></router-view>
+
     <Footer />
   </div>
 </template>
@@ -23,11 +25,12 @@ export default {
 <style lang="scss" >
 @import '~@/assets/style/helper.scss';
 @import '~@/assets/style/reset.scss';
-@import '~@/assets/style/markdown.css';
+@import '~@/assets/style/markdown-github.css';
+
+
 #app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
 }
 body {
   word-break: break-word;
