@@ -12,7 +12,7 @@
           <li>•{{ post.visit_count }} 次浏览{{ "\xa0" }}</li>
           <li>•来自{{ post | tabFormat }}{{ "\xa0" }}</li>
         </ul>
-        <div v-html="post.content" class="topic-content"></div>
+        <div v-html="post.content" class="topic-content markdown-text"></div>
       </div>
       <div class="topic-replies">
         <div class="topic-topBar"> {{post.reply_count}} 回复</div>
@@ -73,16 +73,10 @@ export default {
 
 <style  lang="scss" scoped>
 @import '~@/assets/style/markdown-github.css';
-// 从数据库拿到的 图片 img 怎么都选不中
-.markdown-text {
-  img{
-    max-width: 1000px;
-  }
+// 注意 通过v-html创建的 DOM 内容不受作用域样式影响，可以通过深度作用器来选择为它们设置样式。
+.markdown-text ::v-deep img{
+  max-width: 100%;
 }
-img{
-  max-width: 1000px;
-}
-
 
 .article{
   margin: 0 0 0 185px;

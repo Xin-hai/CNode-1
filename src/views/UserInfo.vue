@@ -111,8 +111,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
-
 .userInformation{
   background: white;
   margin: 15px auto;
@@ -223,12 +221,6 @@ export default {
     }
   }
 }
-
-
-
-
-
-
 
 .userInfomation {
   background: white;

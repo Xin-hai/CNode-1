@@ -19,5 +19,8 @@ git commit -m 'deploy'
 # 部署到 https://xin-hai.github.io  -f 强制执行
 git push -f git@github.com:Xin-hai/CNode-website-1.git master:gh-pages
 
+# 部署到 gitee
+#git push -f git@gitee.com:ZXInhai/cnode-website-1.git master:gh-pages
+
 # 回到之前的那一层目录
 cd -
