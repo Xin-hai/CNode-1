@@ -79,13 +79,12 @@ export default {
 }
 
 .article{
-  margin: 0 0 0 185px;
-  max-width: 64%;
+  margin-right: 290px;
+  max-width: 80%;
   min-height: 71.8vh;
 }
 .article:not(:first-child) {
-  //margin-right: 340px;
-  margin-top: 15px;
+
 }
 .article-content{
   background: #fff;
@@ -187,5 +186,4 @@ export default {
     vertical-align: middle
   }
 }
-
 </style>

@@ -1,8 +1,11 @@
 <template>
   <div id="app">
       <Header />
-    <router-view name="sideBar"></router-view>
+    <div class="container-mainSideBar clearfix">
+      <router-view name="sideBar"></router-view>
       <router-view name="main" :key="$route.fullPath"></router-view>
+    </div>
+
 
     <Footer />
   </div>
@@ -50,6 +53,16 @@ body {
     width: 240px;
     height: 240px;
   }
+}
+
+
+.clearfix:after{
+  clear: both;
+  content: '';
+  display: block;
+}
+.container-mainSideBar{
+  margin: 15px 180px 0 180px;
 }
 
 </style>

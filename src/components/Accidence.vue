@@ -118,7 +118,7 @@ export default {
 .generalUl:last-child {
   p{
     display: inline-block;
-    margin: 10px 0px 10px 15px ;
+    margin: 10px 0 10px 15px ;
     padding: 0;
   }
     p:last-child{

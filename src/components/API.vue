@@ -18,7 +18,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
 #login {
   max-width: 80%;
   margin: 10px auto;

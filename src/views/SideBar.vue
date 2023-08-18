@@ -96,8 +96,6 @@ export default {
   float: right;
   font-size: 14px;
   margin-bottom: 20px;
-  margin-right: 185px;
-  padding-top: 16px;
   .authorTitle {
     .imgName{
       display: flex;
@@ -158,41 +156,4 @@ export default {
   }
 }
 
-
-//li{
-//  padding: 3px 0 ;
-//}
-//.recentReplies ul, .recentTopics ul {
-//  list-style: none;
-//  padding-left: 14px;
-//}
-//
-//ul a {
-//  font-size: 12px;
-//  text-decoration: none;
-//  color: #778087;
-//}
-//
-//.topBar {
-//  padding: 10px;
-//  background-color: #f6f6f6;
-//  height: 16px;
-//  font-size: 12px;
-//  margin-top: 10px;
-//}
-//
-//img {
-//  height: 48px;
-//  width: 48px;
-//  border-radius: 3px;
-//  margin: 10px;
-//}
-//
-//.loginname {
-//  width: 100px;
-//  float: right;
-//  margin-top: 22px;
-//  margin-right: 159px;
-//  font-size: 14px;
-//}
 </style>
