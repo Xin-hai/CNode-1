@@ -38,3 +38,7 @@ yarn lint
 
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
+### 关于合并（本人）
+
+git config pull.rebase false
+
