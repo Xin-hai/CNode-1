@@ -19,7 +19,7 @@ export default {
 
 <style scoped lang="scss">
 #login {
-  max-width: 80%;
+  max-width: 100%;
   margin: 10px auto;
   .goTopic {
     padding: 6px;

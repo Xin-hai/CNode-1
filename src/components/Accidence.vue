@@ -64,7 +64,7 @@ export default {
 
 <style scoped lang="scss">
 .accidence {
-  max-width: 80%;
+  max-width: 100%;
   margin: 10px auto;
 
   .goTopic {

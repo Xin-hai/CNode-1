@@ -76,6 +76,7 @@ export default {
 // 注意 通过v-html创建的 DOM 内容不受作用域样式影响，可以通过深度作用器来选择为它们设置样式。
 .markdown-text ::v-deep img{
   max-width: 100%;
+  cursor: pointer;
 }
 
 .article{
@@ -164,10 +165,6 @@ export default {
 .topic-zan{
   width: 20px;
   height: 20px;
-}
-.markdown-text img {
-  width: 92% !important;
-  cursor: pointer;
 }
 .reply-zan{
   float: right;

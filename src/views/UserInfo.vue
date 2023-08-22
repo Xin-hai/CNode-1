@@ -114,7 +114,7 @@ export default {
 .userInformation{
   background: white;
   margin: 0 auto;
-  width: 80%;
+  width: 100%;
   .goTopic {
     padding: 6px;
     border-bottom: 1px solid #e5e5e5;
@@ -171,7 +171,7 @@ export default {
 .replies,.topics{
   background: white;
   margin: 15px auto;
-  width: 80%;
+  width: 100%;
   font-size: 0.72rem;
   > p {
     background: #f6f6f6;
